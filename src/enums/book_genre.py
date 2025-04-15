@@ -1,0 +1,27 @@
+from enum import Enum
+
+
+class BookGenreType(Enum):
+    FANTASY = "Фэнтези"
+    SCIENCE_FICTION = "Научная фантастика"
+    DETECTIVE = "Детектив"
+    ROMANCE = "Роман"
+    THRILLER = "Триллер"
+    HORROR = "Ужасы"
+    NON_FICTION = "Нон-фикшн"
+    BIOGRAPHY = "Биография"
+    HISTORY = "История"
+    ADVENTURE = "Приключения"
+    PHILOSOPHY = "Философия"
+    POETRY = "Поэзия"
+    DRAMA = "Драма"
+    COMIC = "Комикс"
+    PSYCHOLOGY = "Психология"
+    FOLKLORE = "Фольклор"
+    MYTHOLOGY = "Мифология"
+    FAIRY_TALES = "Сказки"
+    CLASSIC = "Классика"
+    PUBLICISTIC = "Публицистика"
+    SELF_HELP = "Саморазвитие"
+    SHORT_STORIES = "Рассказы"
+    FANTASTIC = "Фантастика"

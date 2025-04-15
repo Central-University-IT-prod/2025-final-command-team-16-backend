@@ -1,0 +1,89 @@
+[tool.poetry]
+name = "prodbackendtemplate"
+version = "0.1.0"
+description = ""
+authors = ["noname33 <koalal1428@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+alembic = "^1.14.1"
+asyncpg = "^0.30.0"
+fastapi = "^0.115.9"
+fastapi-mail = {extras = ["aioredis"], version = "^1.4.2"}
+fastapi-users = {extras = ["sqlalchemy"], version = "^14.0.1"}
+gunicorn = "^23.0.0"
+orjson = "^3.10.15"
+pydantic = {extras = ["email"], version = "^2.10.6"}
+pydantic-settings = "^2.8.1"
+pyjwt = "^2.10.1"
+redis = "^5.2.1"
+sqlalchemy = "^2.0.38"
+uvicorn = "^0.34.0"
+python-multipart = "^0.0.20"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+ruff = "^0.9.8"
+
+
+[tool.ruff]
+target-version = "py312"
+exclude = ["venv", ".venv", ".env"]
+
+line-length = 88
+lint.select = ["ALL"]
+lint.ignore = [
+    # modules
+    "C90", # mccabe complexity
+    "DJ",  # django
+    "T10", # debugger
+
+    # specific rules
+    "COM",    # flake8-commas
+    "S104",   # binging to all interfaces
+    "D100",   # ignore missing docs
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",   # ignore one-line docstring
+    "D203",
+    "D212",
+    "D213",
+    "D400",
+    "D415",
+    "TRY003", # external messages in exceptions are too verbose
+    "TD002",
+    "TD003",
+    "FIX002", # too verbose descriptions of todos
+    "S101",   # prohibited assert statement
+    "INP001",
+    "ARG001", # unused function argument
+    "ANN401", # disallow Any type
+    "RUF001", # string contrains ambigious o
+]
+format.skip-magic-trailing-comma = false
+
+
+[tool.mypy]
+python_version = "3.12"
+plugins = "pydantic.mypy"
+disallow_any_generics = false
+explicit_package_bases = true
+exclude = ["tests", "venv", ".venv"]
+show_error_context = true
+show_absolute_path = true
+pretty = true
+ignore_missing_imports = true
+strict = false
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
